@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/react-frt-develop/static/css/main.0ac75d27.css",
-    "main.js": "/react-frt-develop/static/js/main.cec815dc.js",
+    "main.js": "/react-frt-develop/static/js/main.4ad63bc2.js",
     "static/js/453.43459483.chunk.js": "/react-frt-develop/static/js/453.43459483.chunk.js",
     "static/media/img-american-flag.png": "/react-frt-develop/static/media/img-american-flag.3cd4993ecc8e9c373852.png",
     "index.html": "/react-frt-develop/index.html",
     "static/media/icon-checkbox-checked.svg": "/react-frt-develop/static/media/icon-checkbox-checked.8aa2795f4229b7a8d124.svg",
     "main.0ac75d27.css.map": "/react-frt-develop/static/css/main.0ac75d27.css.map",
-    "main.cec815dc.js.map": "/react-frt-develop/static/js/main.cec815dc.js.map",
+    "main.4ad63bc2.js.map": "/react-frt-develop/static/js/main.4ad63bc2.js.map",
     "453.43459483.chunk.js.map": "/react-frt-develop/static/js/453.43459483.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0ac75d27.css",
-    "static/js/main.cec815dc.js"
+    "static/js/main.4ad63bc2.js"
   ]
 }
