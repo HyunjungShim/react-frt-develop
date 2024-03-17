@@ -44,7 +44,7 @@ export default function AIMain() {
                 </div>
                 <div
                   className="shadow-box"
-                  onclick="location.href='ai-recommend-chart.html';"
+                  onClick={moveTo("/ai-recommend-chart")}
                 >
                   <img
                     src="assets/images/icon/icon-ai-icon-02.svg"
@@ -91,7 +91,10 @@ export default function AIMain() {
                     </button>
                   </div>
                 </div>
-                <div className="shadow-box" onClick={moveTo("/elliot")}>
+                <div
+                  className="shadow-box"
+                  onClick={moveTo("/detail-elliott-main")}
+                >
                   <img
                     src="assets/images/icon/icon-ai-icon-04.svg"
                     alt="세계 헤지펀드사 종목 예측 아이콘"

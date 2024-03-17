@@ -19,9 +19,7 @@ export default function MainTest() {
   // 각 모달 context 전달
   const { isModalOpen, toggleModal } = useModal();
   // console.log(isModalOpen["modal01"]);
-  const [odometer1, setOdometer1] = useState(0);
-  const [odometer2, setOdometer2] = useState(0);
-  const [odometer3, setOdometer3] = useState(0);
+
   useEffect(() => {
     const timeoutId1 = setTimeout(() => setOdometer1(10051), 100);
     const timeoutId2 = setTimeout(() => setOdometer2(6000000), 100);
@@ -40,6 +38,20 @@ export default function MainTest() {
     setTimeout(() => {
       setCircleValue(75);
     }, 100);
+  }, []);
+
+  const [odometer1, setOdometer1] = useState(0);
+  const [odometer2, setOdometer2] = useState(0);
+  const [odometer3, setOdometer3] = useState(0);
+  useEffect(() => {
+    const timeoutId1 = setTimeout(() => setOdometer1(10051), 100);
+    const timeoutId2 = setTimeout(() => setOdometer2(6000000), 100);
+    const timeoutId3 = setTimeout(() => setOdometer3(75), 100);
+    return () => {
+      clearTimeout(timeoutId1);
+      clearTimeout(timeoutId2);
+      clearTimeout(timeoutId3);
+    };
   }, []);
 
   return (
@@ -63,13 +75,13 @@ export default function MainTest() {
                         className="logo-img"
                       />
                     </figure>
-                    <h2 className="ttl">Comfort & Ease</h2>
+                    <h2 className="ttl">High Signal</h2>
                   </div>
                   <button
                     type="button"
                     className="btn arrow-btn arrow-blue-btn"
                   >
-                    <span className="txt">AI+전문가 무료 교육방송</span>
+                    <span className="txt">High Signal 소통 교육 채널</span>
                     <i className="ico ico-arrow-blue"></i>
                   </button>
                 </div>
@@ -83,7 +95,7 @@ export default function MainTest() {
                 >
                   <i className="ico ico-search"></i>
                   <span className="txt">
-                    <span>종목/증시 무료 예측하기</span>
+                    <span>주가 무료 예측하여 매수/매도시점 판단하세요</span>
                     <span className="indicator"></span>
                   </span>
                 </button>
@@ -169,7 +181,12 @@ export default function MainTest() {
                         <dd className="detail">
                           <span className="blue-txt txt">
                             <span id="odometer01" className="odometer">
-                              10,051
+                              <Odometer
+                                value={odometer1}
+                                auto={true}
+                                animation="count"
+                                format="(,ddd).dd"
+                              />
                             </span>
                             개
                           </span>
@@ -180,7 +197,12 @@ export default function MainTest() {
                         <dd className="detail">
                           <span className="blue-txt txt">
                             <span id="odometer02" className="odometer">
-                              75
+                              <Odometer
+                                value={odometer3}
+                                auto={true}
+                                animation="count"
+                                format="(,ddd).dd"
+                              />
                             </span>
                             %
                           </span>
@@ -191,7 +213,12 @@ export default function MainTest() {
                         <dd className="detail">
                           <span className="blue-txt txt">
                             <span id="odometer03" className="odometer">
-                              6,000,000
+                              <Odometer
+                                value={odometer2}
+                                auto={true}
+                                animation="count"
+                                format="(,ddd).dd"
+                              />
                             </span>
                             개
                           </span>
@@ -203,23 +230,23 @@ export default function MainTest() {
                 </div>
               </section>
               <section className="section bd-section">
-                <div className="white-box">
+                <div className="white-box predict-company-box">
                   <div className="box-ttl-wrap">
                     <div className="left-wrap">
                       <div className="box-ttl-item">
                         <h3 className="box-ttl">
-                          <span className="txt">오늘 상승 예측 종목 현황</span>
+                          <span className="txt">상승 예측 종목 현황</span>
                         </h3>
                       </div>
                     </div>
                     <div className="right-wrap type-mt0">
                       <button
                         type="button"
-                        className="btn arrow-btn bd-arrow-btn"
-                        onClick={() => toggleModal("modal01")}
+                        className="btn arrow-btn bd-arrow-blue-btn"
+                        onClick={moveTo("/ai-recommend-chart")}
                       >
                         <span className="txt">
-                          AI 실시간 매매 신호받기
+                          AI 상승 예측 종목 신호받기
                           <span className="indicator"></span>
                         </span>
                         <img
@@ -235,55 +262,107 @@ export default function MainTest() {
                   </div>
 
                   <div className="box-content">
-                    <div className="company-list">
-                      <span className="list-num">1</span>
-                      <div className="company-item">
-                        <figure className="logo-circle">
-                          <img
-                            src={
-                              process.env.PUBLIC_URL +
-                              "assets/images/logo/logo-ex01.png"
-                            }
-                            alt="로고"
-                            className="logo-img"
-                          />
-                        </figure>
-                        <div className="item-content">
-                          <h3 className="item-ttl">이마트</h3>
-                          <p className="item-desc">
-                            <span className="txt">예상수익률</span>
+                    <div className="company-list-grp">
+                      <h3 className="inner-ttl">오늘</h3>
+                      <div
+                        className="company-list"
+                        onClick={moveTo("/ai-recommend-chart")}
+                      >
+                        <span className="list-num">1</span>
+                        <div className="company-item">
+                          <figure className="logo-circle">
+                            <img
+                              src="assets/images/logo/logo-ex01.png"
+                              alt="로고"
+                              className="logo-img"
+                            />
+                          </figure>
+                          <div className="item-content">
+                            <h3 className="item-ttl">이마트</h3>
+                            <p className="item-desc">
+                              <span className="txt">예상수익률</span>
 
-                            <span className="txt red-txt">+5.6%</span>
-                          </p>
+                              <span className="txt red-txt">+5.6%</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="company-list"
+                        onClick={moveTo("/ai-recommend-chart")}
+                      >
+                        <span className="list-num">2</span>
+                        <div className="company-item">
+                          <figure className="logo-circle">
+                            <img
+                              src="assets/images/logo/logo-ex02.png"
+                              alt="로고"
+                              className="logo-img"
+                            />
+                          </figure>
+                          <div className="item-content">
+                            <h3 className="item-ttl">신세계</h3>
+                            <p className="item-desc">
+                              <span className="txt">예상수익률</span>
+
+                              <span className="txt red-txt">+5.6%</span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="company-list">
-                      <span className="list-num">2</span>
-                      <div className="company-item">
-                        <figure className="logo-circle">
-                          <img
-                            src={
-                              process.env.PUBLIC_URL +
-                              "assets/images/logo/logo-ex02.png"
-                            }
-                            alt="로고"
-                            className="logo-img"
-                          />
-                        </figure>
-                        <div className="item-content">
-                          <h3 className="item-ttl">신세계</h3>
-                          <p className="item-desc">
-                            <span className="txt">예상수익률</span>
+                    <div className="company-list-grp">
+                      <h3 className="inner-ttl">이번주</h3>
+                      <div
+                        className="company-list"
+                        onClick={moveTo("/ai-recommend-chart")}
+                      >
+                        <span className="list-num">1</span>
+                        <div className="company-item">
+                          <figure className="logo-circle">
+                            <img
+                              src="assets/images/logo/logo-ex01.png"
+                              alt="로고"
+                              className="logo-img"
+                            />
+                          </figure>
+                          <div className="item-content">
+                            <h3 className="item-ttl">이마트</h3>
+                            <p className="item-desc">
+                              <span className="txt">예상수익률</span>
 
-                            <span className="txt red-txt">+5.6%</span>
-                          </p>
+                              <span className="txt red-txt">+5.6%</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="company-list"
+                        onClick={moveTo("/ai-recommend-chart")}
+                      >
+                        <span className="list-num">2</span>
+                        <div className="company-item">
+                          <figure className="logo-circle">
+                            <img
+                              src="assets/images/logo/logo-ex02.png"
+                              alt="로고"
+                              className="logo-img"
+                            />
+                          </figure>
+                          <div className="item-content">
+                            <h3 className="item-ttl">신세계</h3>
+                            <p className="item-desc">
+                              <span className="txt">예상수익률</span>
+
+                              <span className="txt red-txt">+5.6%</span>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="white-box">
+                {/* <div className="white-box">
                   <div className="box-ttl-wrap">
                     <div className="box-ttl-item">
                       <h3 className="box-ttl">
@@ -340,25 +419,25 @@ export default function MainTest() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </section>
               <section className="section bd-section">
                 <div className="white-box">
                   <div className="box-ttl-wrap">
-                    <div className="left-wrap">
-                      <h3 className="box-ttl">
-                        <span className="txt">인기 종목 예측 현황</span>
+                    <div class="left-wrap">
+                      <h3 class="box-ttl">
+                        <span class="txt">인기 종목 예측 현황</span>
                       </h3>
-                      <p className="box-ttl-desc">현재 문의가 많은 종목</p>
+                      <p class="box-ttl-desc">현재 문의가 많은 종목</p>
                     </div>
                     <div className="right-wrap type-mt0">
                       <button
                         type="button"
-                        className="btn bd-arrow-btn arrow-btn"
-                        // onclick="location.href='ai-recommend-chart.html';"
+                        className="btn arrow-btn bd-arrow-blue-btn"
+                        onClick={moveTo("/ai-recommend-chart")}
                       >
                         <span className="txt">
-                          AI 인기종목 추천받기
+                          인기종목 AI 매매 신호받기
                           <span className="indicator"></span>
                         </span>
                         <img
@@ -381,7 +460,7 @@ export default function MainTest() {
                         <button
                           type="button"
                           className="btn"
-                          //   onclick="location.href='detail-main.html';"
+                          onClick={moveTo("/ai-search-chart")}
                         >
                           <span className="percent-txt type-blue">
                             - 00.00%
@@ -402,7 +481,7 @@ export default function MainTest() {
                         <button
                           type="button"
                           className="btn"
-                          //   onclick="location.href='detail-main.html';"
+                          onClick={moveTo("/ai-search-chart")}
                         >
                           <span className="percent-txt type-red">+ 00.00%</span>
                           <img
@@ -421,7 +500,7 @@ export default function MainTest() {
                         <button
                           type="button"
                           className="btn"
-                          //   onclick="location.href='detail-main.html';"
+                          onClick={moveTo("/ai-search-chart")}
                         >
                           <span className="percent-txt type-red">+ 00.00%</span>
                           <img
@@ -467,7 +546,7 @@ export default function MainTest() {
                           <button
                             type="button"
                             className="btn"
-                            // onclick="location.href='detail-main.html';"
+                            onClick={moveTo("/ai-search-chart")}
                           >
                             <span className="percent-txt type-blue">
                               - 00.00%
@@ -501,7 +580,7 @@ export default function MainTest() {
                           <button
                             type="button"
                             className="btn"
-                            // onclick="location.href='detail-main.html';"
+                            onClick={moveTo("/ai-search-chart")}
                           >
                             <span className="percent-txt type-red">
                               + 00.00%
@@ -535,7 +614,7 @@ export default function MainTest() {
                           <button
                             type="button"
                             className="btn"
-                            // onclick="location.href='detail-main.html';"
+                            onClick={moveTo("/ai-search-chart")}
                           >
                             <span className="percent-txt type-red">
                               + 00.00%

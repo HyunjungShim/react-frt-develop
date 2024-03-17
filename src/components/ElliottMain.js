@@ -19,7 +19,7 @@ export default function ElliottMain() {
               <button
                 type="button"
                 className="btn back-btn"
-                onClick={moveTo("/ai-main")}
+                onClick={moveTo(-1)}
               >
                 <span className="txt-hidden">뒤로 가기</span>
                 <i className="ico ico-arrow-back"></i>

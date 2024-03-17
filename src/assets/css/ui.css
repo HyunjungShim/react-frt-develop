@@ -440,6 +440,10 @@ img {
   color: #2f54eb;
   border-color: #2f54eb;
 }
+.tabs .tab.type-red.active {
+  color: #ff3434 !important;
+  border-color: #ff3434 !important;
+}
 
 .tabs.type-01 {
   gap: 0.8rem;
@@ -529,10 +533,10 @@ img {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   word-wrap: break-word;
-  line-height: 18px;
-  height: 54px;
+  line-height: 22px;
+  height: 66px;
   /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
-  font-size: 12px;
+  font-size: 14px;
   color: #414141;
   font-weight: 500;
   letter-spacing: -0.12px;
@@ -543,6 +547,21 @@ html {
   font-size: 10px;
 }
 
+@media all and (max-width: 365px) {
+  html {
+    font-size: 9.5px;
+  }
+}
+@media all and (max-width: 350px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media all and (max-width: 300px) {
+  html {
+    font-size: 7px;
+  }
+}
 html,
 body {
   width: 100%;
@@ -573,6 +592,7 @@ body {
   flex: 1;
   overflow: auto;
   position: relative;
+  scroll-behavior: smooth;
 }
 .l-page .l-page-mid::-webkit-scrollbar {
   display: none;
@@ -853,6 +873,39 @@ body {
 .system-modal .modal-btn-wrap .btn {
   flex: 1;
 }
+
+.bottom-sheet-modal {
+  align-self: flex-end;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 450px;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: white;
+}
+.bottom-sheet-modal .modal-ttl-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.bottom-sheet-modal .modal-ttl {
+  width: 100%;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #262626;
+  letter-spacing: -0.36px;
+  line-height: 1.44;
+}
+.bottom-sheet-modal .modal-content-wrap {
+  padding-bottom: 2rem;
+  max-height: 200px;
+  overflow: auto;
+}
+
 .btn {
   padding: 0;
   border: 0;
@@ -875,19 +928,32 @@ body {
   padding: 0 1.6rem;
   height: 4.8rem;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 500;
   letter-spacing: -0.32px;
   background-color: #5b88ff;
   border-radius: 8px;
 }
 
+.lightblue-solid-btn {
+  border-radius: 6px;
+  padding: 0 1.6rem;
+  height: 4.8rem;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: -0.32px;
+  color: #5b88ff;
+  border-radius: 8px;
+  background-color: #e5eafd;
+}
+
 .arrow-btn {
   gap: 0.3rem;
 }
 .arrow-btn .txt {
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: 600;
   letter-spacing: -0.24px;
   color: #595959;
 }
@@ -897,13 +963,25 @@ body {
 
 .bd-arrow-btn {
   border: 1px solid #dee4ef;
-  height: 24px;
+  height: 30px;
   padding: 0 0.8rem;
   padding-right: 0.4rem;
   border-radius: 6px;
 }
 .bd-arrow-btn .txt {
   position: relative;
+}
+
+.bd-arrow-blue-btn {
+  border: 1px solid #aec7f5;
+  height: 30px;
+  padding: 0 0.8rem;
+  border-radius: 6px;
+  gap: 5px;
+}
+.bd-arrow-blue-btn .txt {
+  position: relative;
+  color: #215dff;
 }
 
 .arrow-blue-btn .txt {
@@ -944,7 +1022,7 @@ body {
   border-radius: 6px;
   height: 4.8rem;
   letter-spacing: -0.32px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: #7c889d;
   padding: 0 10px;
@@ -1188,6 +1266,8 @@ body {
   transition: all 0.3s;
   z-index: 1;
   width: 100%;
+  left: 0;
+  top: 0;
   height: 100%;
 }
 .checkbox-item .checkbox-inp:checked ~ .checkbox {

@@ -48,7 +48,7 @@ export default function MainMore1() {
                   <div className="company-list-grp">
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -86,7 +86,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -113,7 +113,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -150,7 +150,7 @@ export default function MainMore1() {
                   <div className="company-list-grp">
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -188,7 +188,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -215,7 +215,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -252,7 +252,7 @@ export default function MainMore1() {
                   <div className="company-list-grp">
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -290,7 +290,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">
@@ -317,7 +317,7 @@ export default function MainMore1() {
                     </div>
                     <div
                       className="company-list"
-                      onclick="location.href='main-more-01-chart.html';"
+                      onClick={moveTo("/main-more-chart01")}
                     >
                       <div className="company-item">
                         <figure className="logo-circle">

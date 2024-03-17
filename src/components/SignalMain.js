@@ -1,5 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 export default function SignalMain() {
+  const navigate = useNavigate();
+  const moveTo = (path) => {
+    return () => {
+      //   console.log(`Moving to ${path}`);
+      navigate(path);
+      //   console.log(navigate(path));
+    };
+  };
   return (
     <>
       <div id="app">
@@ -56,7 +65,7 @@ export default function SignalMain() {
                       </ul>
                     </div>
                     <div className="tbl-body">
-                      <ul className="tr">
+                      <ul className="tr" onClick={moveTo("/ai-search-chart")}>
                         <li className="td ta-left">
                           <div className="company-item">
                             <figure className="logo-circle">

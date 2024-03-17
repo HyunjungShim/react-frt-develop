@@ -5,6 +5,9 @@ export default function SignUp() {
   const goBack = () => {
     navigate(-1);
   };
+  const moveTo = (path) => {
+    navigate(path);
+  };
   return (
     <>
       <div id="app">
@@ -13,11 +16,7 @@ export default function SignUp() {
             <header className="header">
               <button type="button" className="btn back-btn" onClick={goBack}>
                 <span className="txt-hidden">뒤로 가기</span>
-                <img
-                  src="assets/images/icon/icon-arrow-back.svg"
-                  alt="뒤로가기 아이콘"
-                  className="icon icon-22"
-                />
+                <i class="ico ico-arrow-back"></i>
               </button>
             </header>
           </div>
@@ -134,11 +133,13 @@ export default function SignUp() {
                   본 솔루션을 통한 투자의 책임은 본인에게 있습니다.
                 </span>
               </label>
-              <Link to="/">
-                <button type="button" className="btn btn-w100 theme-solid-btn">
-                  회원가입 완료
-                </button>
-              </Link>
+              <button
+                type="button"
+                onClick={moveTo("/main")}
+                className="btn btn-w100 theme-solid-btn"
+              >
+                회원가입 완료
+              </button>
             </div>
           </div>
         </div>

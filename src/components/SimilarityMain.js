@@ -1,52 +1,33 @@
 import { useState } from "react";
-import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
+// import Footer from "./Footer";
 import TradingViewWidegt from "./TradingViewWidegt";
 export default function SimilarityMain() {
+  const navigate = useNavigate();
+  const moveTo = (path) => {
+    return () => {
+      //   console.log(`Moving to ${path}`);
+      navigate(path);
+      //   console.log(navigate(path));
+    };
+  };
   const [symbol, setSymbol] = useState("NASDAQ:AAPL");
   return (
     <>
       <div id="app">
         <div className="similarity-main-page l-page">
-          <div className="l-page-top">
-            <div className="header type-lg">
-              <h1 className="hd-title type-lg">유사도 분석</h1>
+          <div class="l-page-top">
+            <div class="header">
+              <button type="button" class="btn back-btn" onClick={moveTo(-1)}>
+                <span class="txt-hidden">뒤로 가기</span>
+                <i class="ico ico-arrow-back"></i>
+              </button>
+              <h1 class="hd-title">유사 패턴 확인</h1>
             </div>
           </div>
 
           <div className="l-page-mid">
             <div className="l-page-content">
-              <div className="search-bar-wrap">
-                <div className="search-bar">
-                  <input
-                    type="text"
-                    placeholder="종목을 입력하세요."
-                    className="inp"
-                    value={symbol}
-                    onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-                  />
-                  <button type="button" className="btn">
-                    <span className="txt-hidden">검색하기</span>
-                    <img
-                      src="assets/images/icon/icon-search.svg"
-                      alt="돋보기 아이콘"
-                      className="icon icon-20"
-                    />
-                  </button>
-                </div>
-                <div className="search-list-wrap">
-                  <ul className="search-list-box">
-                    <li className="search-list">
-                      <span className="color-txt">검색어</span>입니다
-                    </li>
-                    <li className="search-list">
-                      <span className="color-txt">검색어</span>입니다
-                    </li>
-                    <li className="search-list">
-                      <span className="color-txt">검색어</span>입니다
-                    </li>
-                  </ul>
-                </div>
-              </div>
               <section className="section section-01">
                 <div className="period-box">
                   <div className="period-item">
@@ -69,7 +50,7 @@ export default function SimilarityMain() {
                     <dt className="ttl">상승 확률</dt>
                     <dd className="detail">
                       <span id="odometer01" className="odometer">
-                        0
+                        120
                       </span>
                       %
                     </dd>
@@ -78,7 +59,7 @@ export default function SimilarityMain() {
                     <dt className="ttl">20일 후 예상 수익</dt>
                     <dd className="detail">
                       <span id="odometer02" className="odometer">
-                        0
+                        15
                       </span>
                       %
                     </dd>
@@ -98,7 +79,7 @@ export default function SimilarityMain() {
               </section>
             </div>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
 

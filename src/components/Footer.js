@@ -81,9 +81,10 @@ export default function Footer() {
           </button>
           <button
             type="button"
-            className="nav-btn"
-            // className={"nav-btn " + (currentPath == "/ai-main" ? "active" : "")}
-            // onClick={moveTo("/ai-main")}
+            className={
+              "nav-btn " + (currentPath == "/like-list" ? "active" : "")
+            }
+            onClick={moveTo("/like-list")}
           >
             <span className="icon-box">
               <i className="ico icon-on ico-like-list-on"></i>

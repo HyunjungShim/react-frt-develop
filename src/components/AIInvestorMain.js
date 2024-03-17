@@ -38,7 +38,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -62,7 +62,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -86,7 +86,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -110,7 +110,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -134,7 +134,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -158,7 +158,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -182,7 +182,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -206,7 +206,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -230,7 +230,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img
@@ -254,7 +254,7 @@ export default function AIInvestorMain() {
                   <li className="list">
                     <div
                       className="user-item"
-                      onclick="location.href='ai-investor-detail.html';"
+                      onClick={moveTo("/ai-investor-detail")}
                     >
                       <figure className="thumbnail">
                         <img

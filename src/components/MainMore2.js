@@ -40,7 +40,7 @@ export default function MainMore2() {
                     <button
                       type="button"
                       className="btn"
-                      onclick="location.href='detail-main.html';"
+                      onClick={moveTo("/ai-search-chart")}
                     >
                       <span className="percent-txt type-blue">- 00.00%</span>
                       <img
@@ -56,7 +56,7 @@ export default function MainMore2() {
                     <button
                       type="button"
                       className="btn"
-                      onclick="location.href='detail-main.html';"
+                      onClick={moveTo("/ai-search-chart")}
                     >
                       <span className="percent-txt type-red">+ 00.00%</span>
                       <img
@@ -72,7 +72,7 @@ export default function MainMore2() {
                     <button
                       type="button"
                       className="btn"
-                      onclick="location.href='detail-main.html';"
+                      onClick={moveTo("/ai-search-chart")}
                     >
                       <span className="percent-txt type-red">+ 00.00%</span>
                       <img
